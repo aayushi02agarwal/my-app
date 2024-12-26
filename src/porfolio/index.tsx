@@ -78,8 +78,6 @@ function Portfolio() {
   const handleChatIconClick = () => {
     setOpenDialog(true);
   };
-  const [state, setState] = useState({ collapsed: false });
-  console.log("selectedTab", selectedTab);
   return (
     <>
       {selectedTab > 0 && (
@@ -152,17 +150,28 @@ function Portfolio() {
           pageOnChange={handleTabChange}
           // onBeforePageScroll={handleTabChange}
           customPageNumber={selectedTab}
+          blockScrollUp={!isScrollEnabled}
+          blockScrollDown={!isScrollEnabled}
         >
           <FrontPage
             selectedTab={selectedTab}
             setSelectedTab={setSelectedTab}
           />
-          <AboutMe selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+          <AboutMe
+            selectedTab={selectedTab}
+            setSelectedTab={setSelectedTab}
+            setIsScrollEnabled={setIsScrollEnabled}
+          />
           <Experience
             selectedTab={selectedTab}
             setSelectedTab={setSelectedTab}
+            setIsScrollEnabled={setIsScrollEnabled}
           />
-          <Projects selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+          <Projects
+            selectedTab={selectedTab}
+            setSelectedTab={setSelectedTab}
+            setIsScrollEnabled={setIsScrollEnabled}
+          />
         </ReactPageScroller>
         {openDialog && (
           <ChatBox openDialog={openDialog} setOpenDialog={setOpenDialog} />
@@ -191,6 +200,15 @@ function Portfolio() {
           <img src={chatBox} style={{ maxWidth: "45%" }} />
         </button>
       </div>
+      <footer
+        style={{
+          backgroundColor: selectedTab === 0 ? "#0D1117" : "white",
+          color: selectedTab === 0 ? "#D3D3D3" : "",
+          fontSize: "12px",
+        }}
+      >
+        <p style={{opacity: "0.6"}}>&copy; 2024 Aayushi Agarwal</p>
+      </footer>
     </>
   );
 }

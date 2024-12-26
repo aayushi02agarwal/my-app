@@ -20,7 +20,7 @@ import links from "../../assets/linksIcon.svg";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    height: "100vh",
+    height: "95vh",
     // v2
     background: "#0D1117",
   },

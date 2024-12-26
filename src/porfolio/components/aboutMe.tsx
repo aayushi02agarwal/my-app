@@ -9,13 +9,13 @@ import { CustomIcon } from "../common/customIcon";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    height: "100vh",
+    height: "95vh",
     // backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url(${aboutMe})`,
     backgroundSize: "cover", // Ensures the image covers the entire container
     backgroundPosition: "center", // Centers the image
     backgroundBlendMode: "lighten", // Lightens the image with the gradient
     alignContent: "flex-start",
-    overflowY: "auto",
+    // overflowY: "auto",
     // backgroundColor: "rgba(80, 84, 130, 0.7)",
   },
   aboutHeadingSection: {
@@ -25,11 +25,17 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     padding: "120px 60px 30px 60px",
     [theme.breakpoints.down("sm")]: {
-      padding: "100px 40px 10px 40px",
+      padding: "80px 40px 10px 40px",
     },
     [theme.breakpoints.between("sm", "md")]: {
       padding: "110px 60px 30px 60px",
     },
+  },
+  aboutContainer: {
+    display: "flex",
+    justifyContent: "center",
+    height: "70%",
+    overflowY: "auto",
   },
   aboutSection: {
     position: "relative",
@@ -43,6 +49,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.between("sm", "md")]: {
       padding: "30px 40px 20px 40px",
     },
+    // height: "70%",
+    // overflowY: "auto",
   },
   aboutHeading: {
     // fontFamily: "InriaSans-Bold",
@@ -150,57 +158,66 @@ const AboutMe = (props: any) => {
   const classes = useStyles();
   return (
     <>
-      <Grid container className={classes.container}>
+      <Grid
+        container
+        className={classes.container}
+        onMouseEnter={() => props.setIsScrollEnabled(false)}
+        onMouseLeave={() => props.setIsScrollEnabled(true)}
+        onTouchStart={() => props.setIsScrollEnabled(false)}
+        onTouchEnd={() => props.setIsScrollEnabled(true)}
+      >
         <Grid className={classes.aboutHeadingSection} xs={12}>
           <h3 className={classes.aboutHeading}>So, who am I?</h3>
         </Grid>
-        <Grid
-          className={classes.aboutSection}
-          // style={{ paddingTop: "50px" }}
-          xs={8}
-        >
-          <div className={classes.aboutText}>
-            {aboutMeText.split("\n").map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-            <div style={{ paddingTop: "20px" }}>
-              <a
-                href="https://drive.google.com/file/d/1E21VtcmiP-8s_fO_t6R18LYD89lRR6jG/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "#36454F" }}
-              >
-                {/* <CustomIcon component={LinkIcon} style={{color: "#505482"}}/> */}
-                🔗 <span style={{ textDecoration: "underline" }}>Resume</span>
-              </a>
+        <div className={classes.aboutContainer}>
+          <Grid
+            className={classes.aboutSection}
+            // style={{ paddingTop: "50px" }}
+            xs={8}
+          >
+            <div className={classes.aboutText}>
+              {aboutMeText.split("\n").map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+              <div style={{ paddingTop: "20px" }}>
+                <a
+                  href="https://drive.google.com/file/d/1wZciyHDun18W_9LmJLgeuIlHU4hTKrss/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#36454F" }}
+                >
+                  {/* <CustomIcon component={LinkIcon} style={{color: "#505482"}}/> */}
+                  🔗 <span style={{ textDecoration: "underline" }}>Resume</span>
+                </a>
+              </div>
             </div>
-          </div>
-        </Grid>
-        <Grid
-          className={classes.aboutSection}
-          style={{ paddingTop: "50px" }}
-          xs={4}
-        >
-          {/* <div className={classes.skillsPartHeading}>Skills</div> */}
-          <div className={classes.skillsPart}>
-            <ul>
-              <>
-                {skills.map((skill: any) => {
-                  return (
-                    <li>
-                      <div>{skill.skill}</div>
-                      <div>
-                        {skill.values.map((val: any) => {
-                          return <span className="skillValues">{val}</span>;
-                        })}
-                      </div>
-                    </li>
-                  );
-                })}
-              </>
-            </ul>
-          </div>
-        </Grid>
+          </Grid>
+          <Grid
+            className={classes.aboutSection}
+            style={{ paddingTop: "50px" }}
+            xs={4}
+          >
+            {/* <div className={classes.skillsPartHeading}>Skills</div> */}
+            <div className={classes.skillsPart}>
+              <ul>
+                <>
+                  {skills.map((skill: any) => {
+                    return (
+                      <li>
+                        <div>{skill.skill}</div>
+                        <div>
+                          {skill.values.map((val: any) => {
+                            return <span className="skillValues">{val}</span>;
+                          })}
+                        </div>
+                      </li>
+                    );
+                  })}
+                </>
+              </ul>
+            </div>
+          </Grid>
+        </div>
       </Grid>
     </>
   );

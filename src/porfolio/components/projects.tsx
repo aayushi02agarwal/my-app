@@ -10,13 +10,13 @@ import { BorderBottom, Height } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    height: "100vh",
+    height: "95vh",
     // backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url(${aboutMe})`,
     backgroundSize: "cover", // Ensures the image covers the entire container
     backgroundPosition: "center", // Centers the image
     backgroundBlendMode: "lighten", // Lightens the image with the gradient
     alignContent: "flex-start",
-    overflowY: "auto",
+    // overflowY: "auto",
     justifyContent: "center",
     [theme.breakpoints.down("sm")]: {
       display: "grid",
@@ -29,16 +29,28 @@ const useStyles = makeStyles((theme) => ({
     // },
     // backgroundColor: "rgba(80, 84, 130, 0.7)",
   },
+  projectContainer: {
+    display: "flex",
+    justifyContent: "center",
+    [theme.breakpoints.down("sm")]: {
+      display: "grid",
+      gridTemplateColumns: "1fr",
+      justifyItems: "center",
+    },
+    overflowY: "auto",
+  },
   projectHeading: {
     position: "relative",
     display: "flex",
     justifyContent: "flexStart",
     flexDirection: "column",
     alignItems: "center",
-    // [theme.breakpoints.down('sm')]: {
-    //     height: "50vh",
-    //     padding: "100px 80px 30px 80px"
-    // },
+    [theme.breakpoints.down("sm")]: {
+      padding: "80px 40px 10px 40px",
+    },
+    [theme.breakpoints.between("sm", "md")]: {
+      padding: "110px 60px 30px 60px",
+    },
     padding: "120px 60px 30px 60px",
   },
   aboutHeading: {
@@ -141,7 +153,7 @@ const mapping = [
     key: "02",
     image: project2,
     heading: "FemPower - Together, we’re stronger!",
-    subHeading: "TechTogether Atlanta Hackathon",
+    subHeading: "Girls of South Bay Hacks",
     link: "https://devpost.com/software/fempower-r3pl8c",
   },
 ];
@@ -149,36 +161,45 @@ const Projects = (props: any) => {
   const classes = useStyles();
   return (
     <>
-      <Grid container className={classes.container}>
+      <Grid
+        container
+        className={classes.container}
+        onMouseEnter={() => props.setIsScrollEnabled(false)}
+        onMouseLeave={() => props.setIsScrollEnabled(true)}
+        onTouchStart={() => props.setIsScrollEnabled(false)}
+        onTouchEnd={() => props.setIsScrollEnabled(true)}
+      >
         <Grid className={classes.projectHeading} xs={12}>
           <h3 className={classes.aboutHeading}>Projects</h3>
         </Grid>
-        {mapping.map((project: any) => {
-          return (
-            <Grid className={classes.project} xs={4}>
-              <div style={{ overflow: "hidden" }}>
-                <img src={project.image} style={{ minWidth: "100%" }} />
-                <div style={{ display: "flex", flexDirection: "row" }}>
-                  <div>
-                    <p className={classes.heading}>{project.heading}</p>
-                    <p className={classes.subHeading}>{project.subHeading}</p>
+        <div className={classes.projectContainer}>
+          {mapping.map((project: any) => {
+            return (
+              <Grid className={classes.project} xs={4}>
+                <div style={{ overflow: "hidden" }}>
+                  <img src={project.image} style={{ minWidth: "100%" }} />
+                  <div style={{ display: "flex", flexDirection: "row" }}>
+                    <div>
+                      <p className={classes.heading}>{project.heading}</p>
+                      <p className={classes.subHeading}>{project.subHeading}</p>
+                    </div>
+                    <div className={classes.pager}>
+                      <p style={{ paddingLeft: "10px" }}>{project.key}</p>
+                    </div>
                   </div>
-                  <div className={classes.pager}>
-                    <p style={{ paddingLeft: "10px" }}>{project.key}</p>
-                  </div>
-                </div>
 
-                <div className={classes.overlay}>
-                  <a href={project.link} target="blank">
-                    <button className={classes.knowMoreButton}>
-                      {"Know more"}
-                    </button>
-                  </a>
+                  <div className={classes.overlay}>
+                    <a href={project.link} target="blank">
+                      <button className={classes.knowMoreButton}>
+                        {"Know more"}
+                      </button>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </Grid>
-          );
-        })}
+              </Grid>
+            );
+          })}
+        </div>
       </Grid>
     </>
   );

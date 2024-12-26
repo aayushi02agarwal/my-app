@@ -1,11 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { StrictMode } from 'react';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import Portfolio from './porfolio/index';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import { StrictMode } from "react";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import Portfolio from "./porfolio/index";
 // interface Root {
 //   render(element: React.ReactElement): void;
 //   unmount(): void;
@@ -31,5 +30,5 @@ ReactDOM.render(
   <React.StrictMode>
     <Portfolio />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
