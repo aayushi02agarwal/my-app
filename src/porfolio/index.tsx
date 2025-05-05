@@ -29,6 +29,7 @@ import ViewTimelineIcon from "@mui/icons-material/ViewTimeline";
 import IntegrationInstructionsOutlinedIcon from "@mui/icons-material/IntegrationInstructionsOutlined";
 import IntegrationInstructionsIcon from "@mui/icons-material/IntegrationInstructions";
 import Icon from "@ant-design/icons";
+import Testimonials from "./components/testimonials";
 const { SubMenu } = Menu;
 
 const tabs = [
@@ -56,12 +57,26 @@ const tabs = [
     icon: <IntegrationInstructionsOutlinedIcon />,
     selectedIcon: <IntegrationInstructionsIcon />,
   },
+  {
+    key: 3,
+    label: "Testimonials",
+    icon: <IntegrationInstructionsOutlinedIcon />,
+    selectedIcon: <IntegrationInstructionsIcon />,
+  },
 ];
 function Portfolio() {
   const [selectedTab, setSelectedTab] = useState<number>(0);
   const [isScrollEnabled, setIsScrollEnabled] = useState(true);
   const [openDialog, setOpenDialog] = useState(false);
   const [openSideMenu, setOpenSideMenu] = useState(false);
+  React.useEffect(() => {
+    const hasVisited = sessionStorage.getItem("chatboxOpened");
+
+    if (!hasVisited) {
+      setOpenDialog(true); // Open chatbox on first visit
+      sessionStorage.setItem("chatboxOpened", "true"); // Mark as visited
+    }
+  }, []);
 
   const handleTabChange = (number: number) => {
     setSelectedTab(number);
@@ -172,6 +187,11 @@ function Portfolio() {
             setSelectedTab={setSelectedTab}
             setIsScrollEnabled={setIsScrollEnabled}
           />
+          <Testimonials
+            selectedTab={selectedTab}
+            setSelectedTab={setSelectedTab}
+            setIsScrollEnabled={setIsScrollEnabled}
+          />
         </ReactPageScroller>
         {openDialog && (
           <ChatBox openDialog={openDialog} setOpenDialog={setOpenDialog} />
@@ -181,19 +201,19 @@ function Portfolio() {
             href="https://www.linkedin.com/in/aayushi-agarwal-3126961b9/"
             target="blank"
           >
-            <img src={linkedIn} className="linkIcons" />
+            <img src={linkedIn} className="linkIcons" title="LinkedIn"/>
           </a>
           <a href="mailto:aayushi08agarwal@gmail.com" target="blank">
-            <img src={gmail} className="linkIcons" />
+            <img src={gmail} className="linkIcons" title="Gmail"/>
           </a>
           <a href="https://github.com/aayushi02agarwal" target="blank">
-            <img src={github} className="linkIcons" />
+            <img src={github} className="linkIcons" title="Github"/>
           </a>
           <a
             href="https://devpost.com/aayushi08agarwal?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
             target="blank"
           >
-            <img src={devpost} className="linkIcons" />
+            <img src={devpost} className="linkIcons" title="Devpost"/>
           </a>
         </div>
         <button className="dialogButton" onClick={handleChatIconClick}>
@@ -207,7 +227,7 @@ function Portfolio() {
           fontSize: "12px",
         }}
       >
-        <p style={{opacity: "0.6"}}>&copy; 2024 Aayushi Agarwal</p>
+        <p style={{opacity: "0.6"}}>&copy; 2025 Aayushi Agarwal</p>
       </footer>
     </>
   );

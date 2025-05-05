@@ -43,6 +43,12 @@ function AppHeader(props: any) {
       label: "Projects",
       icon: <HomeOutlined />,
     },
+    ,
+    {
+      key: 4,
+      label: "Testimonials",
+      icon: <HomeOutlined />,
+    },
   ];
   const onClick: MenuProps["onClick"] = (e) => {
     console.log("testtt", `Tab clicked: ${e.key}`);

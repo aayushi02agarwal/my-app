@@ -1,12 +1,10 @@
 import React from "react";
 // @ts-ignore
-import aboutMe from "../../assets/aboutMe.png";
 import { Grid, makeStyles } from "@material-ui/core";
 // @ts-ignore
 import project1 from "../../assets/project1.png";
 // @ts-ignore
 import project2 from "../../assets/project2.png";
-import { BorderBottom, Height } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -23,11 +21,6 @@ const useStyles = makeStyles((theme) => ({
       gridTemplateColumns: "1fr",
       justifyItems: "center",
     },
-    // [theme.breakpoints.between("sm", "md")]: {
-    //   display: "grid",
-    //   gridTemplateColumns: "1fr",
-    // },
-    // backgroundColor: "rgba(80, 84, 130, 0.7)",
   },
   projectContainer: {
     display: "flex",

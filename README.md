@@ -73,3 +73,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 //to deploy changes
 npm run build
 firebase deploy
+
+
+Skills:
+React
+TypeScript/JavaScript
+HTML/CSS
+Angular
+Redux
+C/Cpp

@@ -10,6 +10,8 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import "../style.css";
+//@ts-ignore
+import location from "../../assets/images/location.svg"
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -43,16 +45,12 @@ function TimeLine(props: any) {
   const classes = useStyles();
   return (
     <div>
-      {/* <VerticalTimeline lineColor={"#505482"} className={classes.timeLine}> */}
       <VerticalTimeline lineColor={"#161B22"} className={classes.timeLine}>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          // contentStyle={{ background: "#505482" }}
           contentStyle={{ background: "#161B22" }}
-          // contentArrowStyle={{ borderRight: "7px solid #505482" }}
           contentArrowStyle={{ borderRight: "7px solid #161B22" }}
           date={"Aug. 2023 - present"}
-          // iconStyle={{ background: "#505482", color: "#fff", fill: "white" }}
           iconStyle={{
             background: "#161B22",
             color: "#5DB3A6",
@@ -63,17 +61,16 @@ function TimeLine(props: any) {
         >
           <h2
             className="vertical-timeline-element-title timeLineHeading"
-            // style={{ color: "#fff" }}
             style={{ color: "#5DB3A6" }}
           >
-            HPE Aruba Networking, Engineer-1
+            HPE Aruba Networking - Software Developer
           </h2>
           <h2
             className="vertical-timeline-element-subtitle"
             // style={{ color: "#fff" }}
-            style={{ color: "#5DB3A6" }}
+            style={{ color: "#5DB3A6", display: 'flex' }}
           >
-            Bangalore, India
+            <img src={location} style={{ marginRight: "5px" }} /><span>Bangalore, India</span>
           </h2>
         </VerticalTimelineElement>
         <VerticalTimelineElement
@@ -96,25 +93,18 @@ function TimeLine(props: any) {
             // style={{ color: "#fff" }}
             style={{ color: "#5DB3A6" }}
           >
-            HPE Aruba Networking, Intern
+            HPE Aruba Networking - Intern
           </h2>
           <h2
             className="vertical-timeline-element-subtitle"
-            // style={{ color: "#fff" }}
-            style={{ color: "#5DB3A6" }}
+            style={{ color: "#5DB3A6", display: "flex" }}
           >
-            Bangalore, India
+            <img src={location} style={{ marginRight: "5px" }} /><span>Bangalore, India</span>
           </h2>
-          {/* <p style={{color: "#fff"}}>
-                    Creative Direction, User Experience, Visual Design, SEO, Online Marketing
-                </p> */}
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           date="Mar 2022 - Jun 2022"
-          // iconStyle={{ background: "#505482", color: "#fff", fill: "white" }}
-          // contentStyle={{ background: "#505482" }}
-          // contentArrowStyle={{ borderRight: "7px solid #505482" }}
           iconStyle={{
             background: "#161B22",
             color: "#5DB3A6",
@@ -126,26 +116,21 @@ function TimeLine(props: any) {
         >
           <h2
             className="vertical-timeline-element-title"
-            // style={{ color: "#fff" }}
             style={{ color: "#5DB3A6" }}
           >
-            Techmihirnaik Group, UI Developer
+            Techmihirnaik Group - UI Developer Intern
           </h2>
           <h2
             className="vertical-timeline-element-subtitle"
             // style={{ color: "#fff" }}
-            style={{ color: "#5DB3A6" }}
+            style={{ color: "#5DB3A6", display: "flex" }}
           >
-            Remote
+            <img src={location} style={{ marginRight: "5px" }} /><span>Remote</span>
           </h2>
-          <p>{/* User Experience, Visual Design */}</p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
           date="2019 - 2023"
-          // iconStyle={{ background: "#505482", color: "#fff", fill: "white" }}
-          // contentStyle={{ background: "#505482" }}
-          // contentArrowStyle={{ borderRight: "7px solid #505482" }}
           iconStyle={{
             background: "#161B22",
             color: "#5DB3A6",
@@ -157,20 +142,17 @@ function TimeLine(props: any) {
         >
           <h2
             className="vertical-timeline-element-title"
-            // style={{ color: "#fff" }}
             style={{ color: "#5DB3A6" }}
           >
-            Bachelor of Technology in Computer Science
+            B.Tech in Computer Science
           </h2>
           <h2
             className="vertical-timeline-element-subtitle"
-            // style={{ color: "#fff" }}
-            style={{ color: "#5DB3A6" }}
+            style={{ color: "#5DB3A6", display: "flex" }}
           >
-            JECRC Foundation, Jaipur
+            <img src={location} style={{ marginRight: "5px" }} /><span>JECRC Foundation, Jaipur</span>
           </h2>
           <p
-            // style={{ color: "#fff" }}
             style={{ color: "#5DB3A6" }}
           >
             GPA: 8.9/10.0

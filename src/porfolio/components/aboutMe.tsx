@@ -1,11 +1,8 @@
 import React from "react";
 import { Grid, makeStyles } from "@material-ui/core";
 // @ts-ignore
-import aboutMe from "../../assets/aboutMe.png";
 import { aboutMeText } from "../data/data";
 // @ts-ignore
-import { ReactComponent as LinkIcon } from "../../assets/link.svg";
-import { CustomIcon } from "../common/customIcon";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -147,11 +144,11 @@ const skills = [
   },
   {
     skill: "Frameworks/ Libraries",
-    values: ["React", "Redux"],
+    values: ["React", "Redux", "Angular"],
   },
   {
     skill: "Others",
-    values: ["Figma"],
+    values: ["OOP", "Git", "DSA", "OS"],
   },
 ];
 const AboutMe = (props: any) => {
@@ -181,7 +178,7 @@ const AboutMe = (props: any) => {
               ))}
               <div style={{ paddingTop: "20px" }}>
                 <a
-                  href="https://drive.google.com/file/d/1wZciyHDun18W_9LmJLgeuIlHU4hTKrss/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1a_GNiKdaKCgaphPgOCdyhExdqS5SwSXA/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: "#36454F" }}

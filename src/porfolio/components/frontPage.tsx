@@ -1,22 +1,23 @@
 import React, { useEffect } from "react";
 import { Grid, makeStyles } from "@material-ui/core";
 // @ts-ignore
-import myPic from "../../assets/myPic3.png";
-// @ts-ignore
-import codeBox from "../../assets/Codesandbox.png";
-// @ts-ignore
-import resume from "../../assets/resume.svg";
-// @ts-ignore
-import project from "../../assets/projectIcon.svg";
-// @ts-ignore
 import connect from "../../assets/connect.svg";
 // @ts-ignore
-import about from "../../assets/about-me.svg";
+import react from "../../assets/frontPage-icons/react.svg";
 // @ts-ignore
-import experience from "../../assets/experience.svg";
+import javascript from "../../assets/frontPage-icons/javascript.svg";
 // @ts-ignore
-import links from "../../assets/linksIcon.svg";
+import typescript from "../../assets/frontPage-icons/typescript.svg";
 // @ts-ignore
+import redux from "../../assets/frontPage-icons/redux.svg";
+// @ts-ignore
+import html from "../../assets/frontPage-icons/html.svg";
+// @ts-ignore
+import css from "../../assets/frontPage-icons/css.svg";
+// @ts-ignore
+import angular from "../../assets/frontPage-icons/angular.svg";
+// @ts-ignore
+import cpp from "../../assets/frontPage-icons/c++.svg";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -29,8 +30,10 @@ const useStyles = makeStyles((theme) => ({
     width: "100vh",
     position: "relative",
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
     color: "#D3D3D3",
+    gap: "110px",
     alignItems: "center",
     [theme.breakpoints.down("sm")]: {
       display: "none",
@@ -74,6 +77,11 @@ const useStyles = makeStyles((theme) => ({
     },
     "& .bottom": {
       transform: "rotateX(-90deg) translateZ(150px)",
+    },
+    "& .cubeCaption": {
+      opacity: "0.6",
+      fontSize: "16px",
+      letterSpacing: "1px",
     },
     perspective: "1000px", // how far is the object from viewer
   },
@@ -165,47 +173,43 @@ const FrontPage = (props: any) => {
           <div className="cube">
             <div className="face front">
               <div style={{ maxWidth: "20%", maxHeight: "20%" }}>
-                <img src={about} />
+                <img src={react} />
               </div>
-              <div>About Me</div>
+              <div>React</div>
             </div>
             <div className="face back">
-              <div style={{ maxWidth: "20%", maxHeight: "20%" }}>
-                <img src={links} />
+              <div style={{ maxWidth: "20%", maxHeight: "20%", display: "flex", gap: "5px", justifyContent: "center" }}>
+                <img src={javascript} /><img src={typescript} />
               </div>
-              <div>Links</div>
+              <div>JavaScript/TypeScript</div>
             </div>
             <div className="face left">
               <div style={{ maxWidth: "20%", maxHeight: "20%" }}>
-                <img src={project} />
+                <img src={redux} />
               </div>
-              <div>Projects</div>
+              <div>Redux</div>
             </div>
             <div className="face right">
-              <div style={{ maxWidth: "20%", maxHeight: "20%" }}>
-                <img src={experience} />
+              <div style={{ maxWidth: "20%", maxHeight: "20%", display: "flex", gap: "5px", justifyContent: "center" }}>
+                <img src={html} />
+                <img src={css} />
               </div>
-              <div>Experience</div>
+              <div>HTML/CSS</div>
             </div>
             <div className="face top">
               <div style={{ maxWidth: "20%", maxHeight: "20%" }}>
-                <img src={resume} />
+                <img src={angular} />
               </div>
-              <div>Resume</div>
+              <div>Angular</div>
             </div>
             <div className="face bottom">
               <div style={{ maxWidth: "20%", maxHeight: "20%" }}>
-                <img src={connect} />
+                <img src={cpp} />
               </div>
-              <div>Let's Connect</div>
+              <div>C/C++</div>
             </div>
           </div>
-          {/* <img
-            src={codeBox}
-            className="codeBoxLogo"
-            alt="My Image"
-            style={{ width: "100%" }}
-          /> */}
+          <div className="cubeCaption">UI Developer. Problem Solver. Design-Driven Coder.</div>
         </Grid>
       </Grid>
     </>

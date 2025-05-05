@@ -1,6 +1,10 @@
-export const aboutMeText = `With one year of professional engineering experience under my belt, I specialize in problem-solving across various tech stacks, including C/C++, React, Redux, and TypeScript. My forte lies in UI development, crafting interfaces that are both intuitive and user-friendly.
-Armed with a Computer Science degree, my passion for problem-solving has remained steadfast since my college days. Actively engaged on multiple coding platforms, I seize weekends to take part in hackathons, honing my skills, exploring new technologies, and expanding my network while occasionally clinching prizes. Check out some of my work in the Projects section :).
-Fueled by a drive for innovation and adaptability in fluid environments, I am always ready to contribute my skills and enthusiasm to pioneering cutting-edge projects.`;
+export const aboutMeText = `With 2 years of professional engineering experience, I specialize in crafting intuitive, user-friendly interfaces using technologies like C/C++, React, Redux, Angular, TypeScript/JavaScript, and HTML/CSS. My passion lies in frontend development and problem-solving across diverse tech stacks.
+
+Armed with a Computer Science degree, I’ve been actively sharpening my skills since college — participating in coding platforms, weekend hackathons, and occasionally bagging wins along the way. These experiences have helped me grow both technically and as a team player.
+
+I thrive in dynamic environments and love exploring new technologies. Whether it's contributing to innovative projects or building something from scratch, I bring adaptability, creativity, and a hands-on approach to every challenge.
+
+👉 Check out some of my recent work in the Projects section!`;
 
 export let timelineElements = [
   {

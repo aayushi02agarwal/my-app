@@ -1,13 +1,7 @@
 import React from "react";
 import { Grid, makeStyles } from "@material-ui/core";
 // @ts-ignore
-import aboutMe from "../../assets/aboutMe.png";
-import { aboutMeText } from "../data/data";
-// @ts-ignore
-import { ReactComponent as LinkIcon } from "../../assets/link.svg";
-import { CustomIcon } from "../common/customIcon";
 import TimeLine from "../common/timeLine";
-import ScrollLock, { TouchScrollable } from "react-scrolllock";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -17,8 +11,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "center", // Centers the image
     backgroundBlendMode: "lighten", // Lightens the image with the gradient
     alignContent: "flex-start",
-    // overflowY: "auto",
-    // backgroundColor: "rgba(80, 84, 130, 0.7)",
   },
   aboutSection: {
     position: "relative",
@@ -54,10 +46,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flexStart",
     flexDirection: "column",
     alignItems: "center",
-    // [theme.breakpoints.down('sm')]: {
-    //     height: "50vh",
-    //     padding: "100px 80px 30px 80px"
-    // },
     padding: "40px 60px 30px 60px",
     fontFamily: "InriaSerif-Bold",
     // color: "#505482",
